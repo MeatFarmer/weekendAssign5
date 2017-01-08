@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-
     <script src="../scripts/vendors/angular.min.js"></script>
     <script src="../scripts/client.js"></script>
-
     <title>PETS FINDER</title>
   </head>
   <body ng-app='myApp'>
-<h1>PETS FINDER!!!</h1>
-  </body>
+    <h1>PET FINDER!!!</h1>
+    <h3>Please input information about your pet in the input fields listed below including a picture.</h3>
+      <div ng-controller='PetController'>
+        Pet Name: <input type="text" ng-model='petName' placeholder='Pet Name'><br>
+        Pet Type: <input type="text" ng-model='animalType' placeholder='Pet Type'><br>
+        Pet Picture URL: <input type="text" ng-model='imageUrl' placeholder='Pet Picture URL'><br>
+        <button type='button' ng-click='postPet()'>Enter Pet</button>
+    <h4>Our Furry Friends!</h4>
+<ul>
+  <li ng-repeat='pet in pets'>
+    Pet Name: {{pet.petName}}...... Type of Pet: {{pet.animalType}}.... Age of Pet: {{pet.age}}
+    <img ng-src="{{pet.imageUrl}}" alt="Description">
+  </li>
+</ul>
+</div>
+</body>
 </html>
