@@ -22,6 +22,15 @@ myApp.controller( 'PetController', [ '$scope', '$http', function( $scope, $http 
           }); // end response
       }; // end postPet
 
-
-
+      $scope.getPet = function() {
+          console.log('getting pets from server');
+          $http({
+              method: 'GET',
+              url: '/newPet'
+          }).then(function(response) {
+              console.log('Response from server: ', response);
+              $scope.pets = response.data;
+          });
+      };
+      $scope.getPet();
 }]); // end controller

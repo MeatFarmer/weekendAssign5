@@ -6,7 +6,7 @@ var Pet =  require('../models/schema.js' );
 
 
 indexrouter.get('/', function(req, res){
-    console.log('Base URL hit!!');
+    console.log('Base URL');
     Pet.find({}, function(err, petResults) {
         if(err){
           console.log(err);

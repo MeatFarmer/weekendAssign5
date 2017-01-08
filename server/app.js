@@ -19,7 +19,7 @@ MongoDB.once('open', function () {
 app.listen('27017', function(){
   console.log('listening on 27017');
 });
-// app.use('/', indexRouter);
+app.use('/', indexRouter);
 app.use('/newPet', httpRouter);
 
 app.use(express.static('public'));
