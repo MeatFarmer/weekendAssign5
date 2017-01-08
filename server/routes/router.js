@@ -1,3 +1,9 @@
+var express = require('express');
+var router = express.Router();
+var mongoose = require('mongoose');
+var Pet =  require('../models/schema.js' );
+var path = require('path');
+
 router.post('/', function(req, res){
   console.log('req.body = ' + req.body);
     console.log('DB');
